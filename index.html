@@ -761,3 +761,19 @@ elements.forEach((el) => {
 });
 
 </script>
+<script>
+  // Function to check if an element is in view (for elements inside the #other-services section)
+window.addEventListener('scroll', () => {
+const elements = document.querySelectorAll('#other-services .card');
+elements.forEach((el) => {
+  const position = el.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  // If element is in view, add the animation class
+  if (position < windowHeight - 100) {
+    el.classList.add('scroll-active');
+  }
+});
+});
+
+</script>
