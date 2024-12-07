@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: white; /* Text is white for better contrast */
+  background: linear-gradient(135deg, #ff6ec7, #0d6efd, #000000); /* Pink to blue to black */
+  background-attachment: fixed; /* Keeps the gradient static while scrolling */
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #ff6ec7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f03e98;
+  text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.8) !important; /* Transparent black background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: white; /* Ensure text is visible */
+}
+
+.nav-link {
+  margin-right: 1rem;
+  font-weight: 500;
+  color: white; /* Navbar links in white */
+}
+
+.nav-link:hover {
+  color: #ff6ec7; /* Pink hover effect for links */
+}
+
+/* Hero Section */
+header {
+  background: linear-gradient(45deg, #ff6ec7, #000000); /* Pink to black */
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1.25rem;
+}
+
+/* About Section */
+#about {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  color: white;
+}
+
+#about .lead a {
+  color: #ff6ec7;
+}
+
+#about .lead a:hover {
+  color: #f03e98;
+}
+
+/* Carousel */
+.carousel video {
+  border: 2px solid #ff6ec7;
+  border-radius: 8px;
+}
+
+/* Why QLever Section */
+#why-qlever {
+  background: rgba(0, 0, 0, 0.8); /* Transparent black */
+  color: white;
+}
+
+#why-qlever ul li::before {
+  content: '✔';
+  color: #ff6ec7;
+}
+
+/* Licensing Section */
+#pricing {
+  background: rgba(0, 0, 0, 0.7); /* Transparent black */
+}
+
+#pricing .card {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  color: white;
+  border: 1px solid #ff6ec7;
+}
+
+/* Other Services Section */
+#other-services {
+  background: linear-gradient(135deg, #0d6efd, #ff6ec7); /* Blue to pink */
+  color: white;
+}
+
+#other-services .card {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  color: white;
+}
+
+/* Contact Section */
+#contact {
+  background: linear-gradient(135deg, #ff6ec7, #000000); /* Pink to black */
+  color: white;
+}
+
+#contact .btn {
+  background-color: #ff6ec7;
+  color: white;
+}
+
+#contact .btn:hover {
+  background-color: #f03e98;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8); /* Transparent black */
+  color: white;
+  font-size: 0.9rem;
+}
+.hero-section {
+  background: linear-gradient(135deg, rgba(255, 110, 199, 0.7), rgba(13, 110, 253, 0.7), rgba(0, 0, 0, 0.7)), url('img/pexels-bertellifotografia-19012039.jpg');
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  text-align: center;
+  padding: 100px 0; /* Adjusted padding to give a nice vertical space */
+}
+
+.hero-section h1,
+.hero-section .lead {
+  z-index: 2;
+}
+/* Radiant Text for Navbar Brand */
+.navbar-brand {
+  font-size: 1.75rem; /* Default size */
+  background: linear-gradient(135deg, #ff6ec7, #0d6efd, #000000); /* Pink to blue to black */
+  -webkit-background-clip: text; /* Apply gradient to text for Safari */
+  background-clip: text; /* Apply gradient to text for other browsers */
+  color: transparent; /* Make the text transparent so the gradient is visible */
+  font-weight: bold; /* Optional: Make the text bold */
+}
+
+/* Reduce font size for mobile version */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.0rem; /* Smaller font size on mobile */
+  }
+}
