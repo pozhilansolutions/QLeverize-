@@ -45,45 +45,33 @@
 </header>
 
 
-  <!-- About Section -->
-  <section id="about" class="py-5">
-    <div class="container text-center">
-      <p class="lead">
-        <a href="https://github.com/ad-freiburg/qlever/">QLever</a> is a powerful open-source graph database and RDF
-        triplestore that allows you to load and query <strong>hundreds of billions of facts</strong> on a single
-        commodity machine, delivering <strong>unprecedented performance</strong>. QLever’s SPARQL frontend offers
-        <strong>intuitive autocompletion</strong> and <strong>real-time term lookup</strong>, making it easier than ever
-        to work with knowledge graphs. Explore our <a href="https://qlever.dev/">public SPARQL endpoints</a> and see the
-        difference for yourself.
-        <strong>QLeverize</strong> offers <strong>commercial support</strong> for organizations seeking faster
-        implementations, advanced scalability, and private assistance tailored to their needs.
-      </p>
-    </div>
-
-    <!-- Video Carousel -->
+<section class="py-5" style="background: linear-gradient(135deg, #ff6ec7, #0d6efd, #000000); /* Pink to blue to black */
+">
     <div class="container">
-      <div id="qleverCarousel" class="carousel slide">
+      <div id="qleverCarousel" class="carousel slide" data-bs-ride="carousel">
         <!-- Indicators -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#qleverCarousel" data-bs-slide-to="0" class="active" aria-current="true"
             aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#qleverCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         </div>
+  
         <!-- Carousel Inner -->
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <video class="d-block w-100 mx-auto" style="max-width: 600px; height: auto;" muted>
-              <source src="img/3163534-uhd_3840_2160_30fps.mp4" type="video/mp4">
+            <video class="d-block mx-auto" autoplay muted loop style="width: 100%; height: 80vh; object-fit: cover;">
+              <source src="img/3163534-uhd_3840_2160_30fps.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div class="carousel-item">
-            <video class="d-block w-100 mx-auto" style="max-width: 600px; height: auto;" muted>
-              <source src="img/19205382-uhd_3840_2160_30fps.mp4" type="video/mp4">
+            <video class="d-block mx-auto" autoplay muted loop style="width: 100%; height: 80vh; object-fit: cover;">
+              <source src="img/19205382-uhd_3840_2160_30fps.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
+  
         <!-- Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#qleverCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -96,7 +84,16 @@
       </div>
     </div>
   </section>
-
+   <!-- Video Carousel -->
+  <style>.carousel-inner video {
+    max-width: 800px; /* Adjust video width */
+    width: 100%; /* Responsive */
+    height: auto; /* Maintain aspect ratio */
+    border: none; /* Remove any border */
+    display: block;
+    margin: 0 auto; /* Center the video */
+  }
+  </style>
   <!-- Why QLever Section -->
 <section id="why-qlever" class="custom-bg py-5">
   <div class="container">
@@ -495,12 +492,3 @@
 </html>
 
 
-<style>.carousel-inner video {
-  max-width: 800px; /* Adjust video width */
-  width: 100%; /* Responsive */
-  height: auto; /* Maintain aspect ratio */
-  border: none; /* Remove any border */
-  display: block;
-  margin: 0 auto; /* Center the video */
-}
-</style>
