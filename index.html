@@ -796,9 +796,43 @@ elements.forEach((el) => {
       }
     }
 
+    // Function to handle video end events and move carousel
+    function handleVideoEnd() {
+      // Get the current active video and listen for its 'ended' event
+      const activeSlide = carousel.querySelector('.carousel-item.active');
+      const activeVideo = activeSlide.querySelector('video');
+      
+      if (activeVideo) {
+        activeVideo.addEventListener('ended', function () {
+          const carouselInstance = new bootstrap.Carousel(carousel);
+          const nextSlide = activeSlide.nextElementSibling || carousel.querySelector('.carousel-item:first-child');
+
+          // If it's the second video, go back to the first slide
+          if (nextSlide === carousel.querySelector('.carousel-item:first-child')) {
+            // Move the carousel to the first slide
+            carouselInstance.to(0);  // Go back to the first slide
+            playVideo(carousel.querySelector('.carousel-item:first-child video')); // Play the first video again
+          } else {
+            // Move to the next slide
+            carouselInstance.next();
+            playVideo(nextSlide.querySelector('video')); // Play the next video
+          }
+        });
+      }
+    }
+
+    // Start by ensuring the first video plays on page load
+    const firstVideo = carousel.querySelector('.carousel-item.active video');
+    if (firstVideo) {
+      playVideo(firstVideo);
+    }
+
+    // Set up the event listener to handle video end on both videos
+    handleVideoEnd();
+
     // When the carousel slides, pause all videos and play the active one
     carousel.addEventListener('slid.bs.carousel', function () {
-      // Pause all videos
+      // Pause all videos first
       videos.forEach(pauseVideo);
 
       // Play the video in the active slide
@@ -807,12 +841,6 @@ elements.forEach((el) => {
         playVideo(activeVideo);
       }
     });
-
-    // Ensure the first video is playing on page load
-    const firstVideo = carousel.querySelector('.carousel-item.active video');
-    if (firstVideo) {
-      playVideo(firstVideo);
-    }
   });
 </script>
 
