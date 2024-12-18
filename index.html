@@ -85,13 +85,13 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <video class="d-block w-100 mx-auto" style="max-width: 600px; height: auto;" muted>
-              <source src="img/3163534-uhd_3840_2160_30fps.mp4" type="video/mp4">
+              <source src="img/carosuel1.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
           <div class="carousel-item">
             <video class="d-block w-100 mx-auto" style="max-width: 600px; height: auto;" muted>
-              <source src="img/19205382-uhd_3840_2160_30fps.mp4" type="video/mp4">
+              <source src="img/carosuel2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
@@ -108,7 +108,7 @@
       </div>
     </div>
   </section>
-
+  
   <section id="why-qlever" class="custom-bg py-5">
     <div class="container">
       <h2 class="text-center mb-4" style="color: white;">Why Choose QLever?</h2>
@@ -777,3 +777,42 @@ elements.forEach((el) => {
 });
 
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('#qleverCarousel');
+    const videos = carousel.querySelectorAll('video');
+
+    // Function to play a video
+    function playVideo(video) {
+      if (video && video.paused) {
+        video.play();
+      }
+    }
+
+    // Function to pause a video
+    function pauseVideo(video) {
+      if (video && !video.paused) {
+        video.pause();
+      }
+    }
+
+    // When the carousel slides, pause all videos and play the active one
+    carousel.addEventListener('slid.bs.carousel', function () {
+      // Pause all videos
+      videos.forEach(pauseVideo);
+
+      // Play the video in the active slide
+      const activeVideo = carousel.querySelector('.carousel-item.active video');
+      if (activeVideo) {
+        playVideo(activeVideo);
+      }
+    });
+
+    // Ensure the first video is playing on page load
+    const firstVideo = carousel.querySelector('.carousel-item.active video');
+    if (firstVideo) {
+      playVideo(firstVideo);
+    }
+  });
+</script>
+
